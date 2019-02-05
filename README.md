@@ -1,4 +1,5 @@
-Spack repo for the performance-test, dolfinx, ffcx, and other prerequisite packages.
+Spack repo for the performance-test, dolfinx, ffcx, and other prerequisite
+packages that make up FEniCS.
 
 ## Usage
 
