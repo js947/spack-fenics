@@ -33,6 +33,7 @@ class Dolfinx(CMakePackage):
     depends_on('py-sphinx@1.0.1:', when='+doc', type='build')
     depends_on('eigen~fftw~metis~mpfr~scotch~suitesparse@3.2.0:')
     depends_on('metis')
+    depends_on('boost')
 
     depends_on('swig@3.0.3:', type=('build', 'run'))
     depends_on('cmake@2.8.12:', type='build')
