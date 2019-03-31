@@ -13,5 +13,7 @@ class PyFfcx(PythonPackage):
     git      = "https://github.com/FEniCS/ffcx.git"
 
     version('master', branch='master')
+    version('2019-feb', commit='8337f39d19588cb445a1838a63836ebf35438213')
 
     depends_on('py-setuptools', type='build')
+    depends_on('py-cffi')

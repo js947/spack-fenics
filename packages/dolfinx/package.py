@@ -10,10 +10,13 @@ class Dolfinx(CMakePackage):
     """Next generation FEniCS problem solving environment"""
 
     homepage = "https://github.com/FEniCS/dolfinx"
+    url      = "https://github.com/FEniCS/dolfinx"
     git      = "https://github.com/FEniCS/dolfinx.git"
 
+    submodules = True
+
     version('master', branch='master')
-    version('masterish', commit='159476673')
+    version('2019-feb', commit='84ba31dc2401caf46d99f139944d6cec9c07eedf')
 
     extends('python')
 
@@ -24,7 +27,7 @@ class Dolfinx(CMakePackage):
     depends_on('petsc+mpi+shared+hypre+metis~superlu-dist@develop')
     depends_on('py-numpy')
     depends_on('py-sympy')
-    depends_on('py-ffcx@master')
+    depends_on('py-ffcx')
     depends_on('py-fiat@master')
     depends_on('py-dijitso@master')
     depends_on('py-ufl@master')
@@ -40,5 +43,13 @@ class Dolfinx(CMakePackage):
 
     root_cmakelists_dir = 'cpp'
 
-    def cmake_is_on(self, option):
-        return 'ON' if option in self.spec else 'OFF'
+    #def cmake_is_on(self, option):
+        #return 'ON' if option in self.spec else 'OFF'
+
+    def cmake_args(self):
+        mpi = self.spec['mpi']
+        return [
+            '-DDOLFIN_SKIP_BUILD_TESTS=True',
+            '-DMPI_C_COMPILER=%s'%mpi.mpicc,
+            '-DMPI_CXX_COMPILER=%s'%mpi.mpicxx,
+            ]
