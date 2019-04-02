@@ -15,7 +15,7 @@ class Dolfinx(CMakePackage):
 
     submodules = True
 
-    version('master', branch='master')
+    version('2019-mar', commit='3fd0d56')
     version('2019-feb', commit='84ba31dc2401caf46d99f139944d6cec9c07eedf')
 
     extends('python')
