@@ -31,7 +31,7 @@ class FenicsPerformanceTest(CMakePackage):
 
     def install(self, spec, prefix):
         mkdirp(prefix.bin)
-        install(join_path("spack-build", "dolfin-scaling-test"), prefix.bin)
+        install(join_path("..", "spack-build", "dolfin-scaling-test"), prefix.bin)
 
     root_cmakelists_dir = "src"
 
