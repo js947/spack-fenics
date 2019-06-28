@@ -40,7 +40,6 @@ class Dolfinx(CMakePackage):
     depends_on("metis")
     depends_on("boost")
 
-    depends_on("swig@3.0.3:", type=("build", "run"))
     depends_on("cmake@2.8.12:", type="build")
 
     root_cmakelists_dir = "cpp"
