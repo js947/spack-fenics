@@ -25,3 +25,4 @@ class PyUfl(PythonPackage):
     version("2016.1.0", sha256="8dccfe10d1251ba48a4d43a4c6c89abe076390223b500f4baf06f696294b8dd0")
 
     depends_on("py-setuptools", type="build")
+    depends_on("py-numpy")

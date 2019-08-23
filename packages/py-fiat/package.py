@@ -25,3 +25,5 @@ class PyFiat(PythonPackage):
     version("2017.2.0", sha256="abf4bfae6ab67601ab49e6df1ee3664c19c36f18467720706ec9e62d4c75837c")
     version("2017.1.0", sha256="d4288401ad16c4598720f9db0810a522f7f0eadad35d8211bac7120bce5fde94")
     version("2016.2.0", sha256="812ecf100211bc680e74b9b6546a356efd8be26a492f500cab975e5fa8d64d5d")
+
+    depends_on('py-sympy')
