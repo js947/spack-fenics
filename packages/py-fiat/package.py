@@ -20,6 +20,7 @@ class PyFiat(PythonPackage):
     url = "https://bitbucket.org/fenics-project/fiat/downloads/fiat-2018.1.0.tar.gz"
     git = "https://bitbucket.org/fenics-project/fiat.git"
 
+    version("2019-nov", commit="825b23a8494ffab0ab2dc76382df19ab9e4404e6")
     version("master", branch="master")
     version("2018.1.0", sha256="3d897d99fdc94441f9c8720fb5a3bcaf8a0b9ede897a0600cb1f329dacec5c92")
     version("2017.2.0", sha256="abf4bfae6ab67601ab49e6df1ee3664c19c36f18467720706ec9e62d4c75837c")

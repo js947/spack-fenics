@@ -17,6 +17,7 @@ class PyUfl(PythonPackage):
     url = "https://bitbucket.org/fenics-project/ufl/downloads/ufl-2018.1.0.tar.gz"
     git = "https://bitbucket.org/fenics-project/ufl.git"
 
+    version("2019-nov", commit="287c42ac456acc7f45d8b6c303632a4aba20b08e")
     version("master", branch="master")
     version("2018.1.0", sha256="ed191f5e0abfeb9922a68a6802f819e9cc6c50749472c01365319f66a5cfcbea")
     version("2017.2.0", sha256="45562fcd29ceb2f2e37c44bc2552b8e6c5d76409f73526096d2bcdb7078cf99c")
