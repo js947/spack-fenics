@@ -15,34 +15,24 @@ class Dolfinx(CMakePackage):
 
     submodules = True
 
-    version("2019-nov", commit="cf07f49a684f9a5bb802451c40515ffeaccfc60e")
-    version("2019-jun", commit="6663337cd")
-    version("2019-may", commit="85efe3eed55d2cf92668a4a17c364a0cd9489791")
-    version("2019-apr", commit="c4c208651d2ad37aa983e10a1b58d5a77b1106a9")
-    version("2019-mar", commit="3fd0d56")
-    version("2019-feb", commit="84ba31dc2401caf46d99f139944d6cec9c07eedf")
-
-    extends("python")
+    version("master", branch="master")
+    #extends("python")
 
     variant("doc", default=False, description="Builds the documentation")
 
     depends_on("mpi")
     depends_on("hdf5+hl+fortran")
-    depends_on("petsc+mpi+shared+hypre+metis~superlu-dist@develop")
-    depends_on("py-numpy")
-    depends_on("py-sympy")
-    depends_on("py-ffcx")
-    depends_on("py-fiat@master")
-    depends_on("py-dijitso@master")
-    depends_on("py-ufl@master")
-    depends_on("scotch+mpi~metis")
-    depends_on("python@3.5:")
-    depends_on("py-sphinx@1.0.1:", when="+doc", type="build")
-    depends_on("eigen~fftw~metis~mpfr~scotch~suitesparse@3.2.0:")
-    depends_on("metis")
     depends_on("boost")
+    depends_on("eigen")
+    depends_on("petsc+mpi+shared+hypre+metis~superlu-dist")
+    depends_on("scotch+mpi~metis")
+    depends_on("py-ufl")
+    depends_on("py-ffcx")
+    depends_on("py-sphinx@1.0.1:", when="+doc", type="build")
 
-    depends_on("cmake@2.8.12:", type="build")
+    #depends_on("python@3.5:")
+
+    depends_on("cmake@3.9:", type="build")
 
     root_cmakelists_dir = "cpp"
 
