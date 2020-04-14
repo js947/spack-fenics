@@ -7,24 +7,17 @@ See the rest of the [spack documentation](https://spack.rtfd.io).
 
 After checking out the repo locally do:
 ```
-$ spack repo add ./fenics-repo
+$ spack repo add ./spack-fenics
 ```
 to register the repo in spack. The performance test can then be installed with:
 ```
-$ spack install fenics-performance-test
+$ spack install performance-test
 ```
 
 This will make a module which can be loaded via spack:
 ```
-$ spack load -r fenics-performance-test
+$ spack load -r performance-test
 $ which dolfin-scaling-test
 /some/long/spack/prefix/bin/dolfin-scaling-test
 ```
 
-## Caveats
-
-As dolfinx is under active development, the performance-test specifies a recent
-but not quite up to date commit from the master branch.
-
-The fenics-performance-test package currently only contains the binary for
-`dolfin-scaling-test`.
