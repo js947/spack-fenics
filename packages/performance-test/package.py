@@ -6,7 +6,7 @@
 from spack import *
 
 
-class FenicsPerformanceTest(CMakePackage):
+class PerformanceTest(CMakePackage):
     """performance tests for fenics"""
 
     homepage = "https://github.com/FEniCS/performance-test"
