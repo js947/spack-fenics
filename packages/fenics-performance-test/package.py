@@ -12,13 +12,7 @@ class FenicsPerformanceTest(CMakePackage):
     homepage = "https://github.com/FEniCS/performance-test"
     git = "https://github.com/FEniCS/performance-test.git"
 
-    version("2019-nov", commit="d60c2265514a85e11164da4fbf80667a2236e98f")
-    version("2019-jun", commit="67b599f")
-    version("2019-may", commit="40c70e62d089595a646ed0487f5374dbd87babef")
-    version("2019-apr", commit="37c7777ca986d0eb88d84974b77c76b38d257bf6")
-    version("2019-mar", commit="386b8fc")
-    version("2019-feb", commit="354b12806b81d2a25ea14c2e48cb763fcd6e64e5")
-
+    version("master", branch="master")
 
     depends_on("py-ffcx")
     depends_on("dolfinx")
