@@ -13,17 +13,16 @@ class PyUfl(PythonPackage):
     spaces and defining expressions for weak forms in a notation close to
     mathematical notation."""
 
-    homepage = "https://bitbucket.org/fenics-project/ufl"
-    url = "https://bitbucket.org/fenics-project/ufl/downloads/ufl-2018.1.0.tar.gz"
-    git = "https://bitbucket.org/fenics-project/ufl.git"
+    homepage = "https://fenicsproject.org/"
+    url = "https://github.com/FEniCS/ufl/archive/2019.1.0.tar.gz"
+    git = "https://github.com/FEniCS/ufl.git"
 
-    version("2019-nov", commit="287c42ac456acc7f45d8b6c303632a4aba20b08e")
     version("master", branch="master")
-    version("2018.1.0", sha256="ed191f5e0abfeb9922a68a6802f819e9cc6c50749472c01365319f66a5cfcbea")
-    version("2017.2.0", sha256="45562fcd29ceb2f2e37c44bc2552b8e6c5d76409f73526096d2bcdb7078cf99c")
-    version("2017.1.0", sha256="af87fa10f492660e8dd9f5c820c03529e017b80bf2002da54b8234c56b8dda8f")
-    version("2016.2.0", sha256="be2e165fc13d079c5d98c8864e8c774b68a336fa5a97433993575866c715fa1e")
-    version("2016.1.0", sha256="8dccfe10d1251ba48a4d43a4c6c89abe076390223b500f4baf06f696294b8dd0")
+    version('2019.1.0',       sha256='46ac0df4e96327be10b9576d2b8fa8b2c4ca62d3c681d407f5718b162d3ca22d')
+    version('2018.1.0',       sha256='b0d4c2f43f396fd5609317b70d55b53b89c649962fc8a593f4e0e21607da211d')
+    version('2017.2.0.post0', sha256='111e77707cd6731584b1041f405c2fd3f1752a86c51fd9c430524bd396f293b0')
+    version('2017.2.0',       sha256='0adff7a511185b20c38ddaccdeed6c1b2ecafe4b163c688bfd1316d5c3b1c00d')
+    version('2017.1.0.post1', sha256='82c8170f44c2392c7e60aa86495df22cc209af50735af8115dc35aeda4b0ca96')
 
     depends_on("py-setuptools", type="build")
     depends_on("py-numpy")
