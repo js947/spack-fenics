@@ -12,11 +12,14 @@ class PerformanceTest(CMakePackage):
     homepage = "https://github.com/FEniCS/performance-test"
     git = "https://github.com/FEniCS/performance-test.git"
 
-    version("master", branch="master")
+    version("master", branch="master", default=True)
+    version("amgx", branch="js947/amgx")
 
     depends_on("py-ffcx")
     depends_on("dolfinx")
     depends_on("boost+program_options")
+
+    depends_on("amgxwrapper", when="+amgx")
 
     @run_before("cmake")
     def compile_forms(self):
