@@ -16,15 +16,15 @@ class PyFiat(PythonPackage):
     triangles and tetrahedra. Upcoming versions will also support Hermite and
     nonconforming elements"""
 
-    homepage = "https://bitbucket.org/fenics-project/fiat"
-    url = "https://bitbucket.org/fenics-project/fiat/downloads/fiat-2018.1.0.tar.gz"
-    git = "https://bitbucket.org/fenics-project/fiat.git"
+    homepage = "https://fenicsproject.org/"
+    url = "https://github.com/FEniCS/ufl/archive/2019.1.0.tar.gz"
+    git = "https://github.com/FEniCS/ufl.git"
 
-    version("2019-nov", commit="825b23a8494ffab0ab2dc76382df19ab9e4404e6")
     version("master", branch="master")
-    version("2018.1.0", sha256="3d897d99fdc94441f9c8720fb5a3bcaf8a0b9ede897a0600cb1f329dacec5c92")
-    version("2017.2.0", sha256="abf4bfae6ab67601ab49e6df1ee3664c19c36f18467720706ec9e62d4c75837c")
-    version("2017.1.0", sha256="d4288401ad16c4598720f9db0810a522f7f0eadad35d8211bac7120bce5fde94")
-    version("2016.2.0", sha256="812ecf100211bc680e74b9b6546a356efd8be26a492f500cab975e5fa8d64d5d")
+    version('2019.1.0',       sha256='46ac0df4e96327be10b9576d2b8fa8b2c4ca62d3c681d407f5718b162d3ca22d')
+    version('2018.1.0',       sha256='b0d4c2f43f396fd5609317b70d55b53b89c649962fc8a593f4e0e21607da211d')
+    version('2017.2.0.post0', sha256='111e77707cd6731584b1041f405c2fd3f1752a86c51fd9c430524bd396f293b0')
+    version('2017.2.0',       sha256='0adff7a511185b20c38ddaccdeed6c1b2ecafe4b163c688bfd1316d5c3b1c00d')
+    version('2017.1.0.post1', sha256='82c8170f44c2392c7e60aa86495df22cc209af50735af8115dc35aeda4b0ca96')
 
     depends_on('py-sympy')
