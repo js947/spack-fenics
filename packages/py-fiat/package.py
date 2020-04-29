@@ -17,14 +17,16 @@ class PyFiat(PythonPackage):
     nonconforming elements"""
 
     homepage = "https://fenicsproject.org/"
-    url = "https://github.com/FEniCS/ufl/archive/2019.1.0.tar.gz"
-    git = "https://github.com/FEniCS/ufl.git"
+    url = "https://github.com/FEniCS/fiat/archive/2019.1.0.tar.gz"
+    git = "https://github.com/FEniCS/fiat.git"
 
     version("master", branch="master")
-    version('2019.1.0',       sha256='46ac0df4e96327be10b9576d2b8fa8b2c4ca62d3c681d407f5718b162d3ca22d')
-    version('2018.1.0',       sha256='b0d4c2f43f396fd5609317b70d55b53b89c649962fc8a593f4e0e21607da211d')
-    version('2017.2.0.post0', sha256='111e77707cd6731584b1041f405c2fd3f1752a86c51fd9c430524bd396f293b0')
-    version('2017.2.0',       sha256='0adff7a511185b20c38ddaccdeed6c1b2ecafe4b163c688bfd1316d5c3b1c00d')
-    version('2017.1.0.post1', sha256='82c8170f44c2392c7e60aa86495df22cc209af50735af8115dc35aeda4b0ca96')
+    version('2019.1.0',       sha256='2a6d175a825ed725843918ef28846edbcf710a879c2fe8caaeda77b1ce9b9a1c')
+    version('2018.1.0',       sha256='7468709c7aacf7dfb22c09fb5250448eb24084b9dd088ec2632a96d56c0f3830')
+    version('2017.2.0',       sha256='e4d3ffc86a0a717b3f17b9bb2d922214c342be27e5bdfbe50f110030bfff9729')
+    version('2017.1.0.post1', sha256='1784fe1cb9479ca7cd85f63b0afa6e07634feec8d8e82fa8be4c480649cb9621')
+    version('2017.1.0',       sha256='d4288401ad16c4598720f9db0810a522f7f0eadad35d8211bac7120bce5fde94')
 
+    extends("python")
+    depends_on('py-setuptools', type="build")
     depends_on('py-sympy')
