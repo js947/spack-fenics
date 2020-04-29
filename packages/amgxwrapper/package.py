@@ -11,8 +11,12 @@ class Amgxwrapper(CMakePackage):
     """An interface between PETSc and the NVIDIA AmgX library"""
 
     homepage = "https://github.com/barbagroup/AmgXWrapper"
-    url      = "https://github.com/js947/AmgXWrapper/archive/v1.5.tar.gz"
+    url      = "https://github.com/barbagroup/AmgXWrapper/archive/v1.5.tar.gz"
+    git      = "https://github.com/barbagroup/AmgXWrapper.git"
 
+    version('js947', branch="pass-by-ref", git="https://github.com/js947/AmgXWrapper.git")
+
+    version('master', branch='master')
     version('1.5', sha256='b3855bc9f5b18d3b55fd1f6ca3c31ece2924eb88bfe751c1988c55a793ce0c93')
 
     depends_on('amgx')
@@ -20,7 +24,7 @@ class Amgxwrapper(CMakePackage):
 
     def cmake_args(self):
         return [
-            'PETSC_DIR=%s' % self.spec['petsc'].prefix,
-            'CUDA_DIR=%s' % sepf.spec['cuda'].prefix,
-            'AMGX_DIR=%s' % sepf.spec['amgx'].prefix,
+            '-DPETSC_DIR=%s' % self.spec['petsc'].prefix,
+            '-DCUDA_DIR=%s' % self.spec['cuda'].prefix,
+            '-DAMGX_DIR=%s' % self.spec['amgx'].prefix,
         ]
