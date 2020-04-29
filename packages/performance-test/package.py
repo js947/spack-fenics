@@ -19,21 +19,10 @@ class PerformanceTest(CMakePackage):
     depends_on("dolfinx")
     depends_on("boost+program_options")
 
-    depends_on("amgxwrapper", when="+amgx")
-
-    @run_before("cmake")
-    def compile_forms(self):
-        ffc = which("ffc", path=self.spec["py-ffcx"].prefix.bin)
-        with working_dir("src"):
-            ffc("Elasticity.ufl")
-            ffc("Poisson.ufl")
+    depends_on("amgxwrapper", when="@amgx")
 
     def install(self, spec, prefix):
         mkdirp(prefix.bin)
-        install(join_path("..", "spack-build", "dolfin-scaling-test"), prefix.bin)
+        install(join_path(self.build_directory, "dolfinx-scaling-test"), prefix.bin)
 
     root_cmakelists_dir = "src"
-
-    def cmake_args(self):
-        mpi = self.spec["mpi"]
-        return ["-DMPI_C_COMPILER=%s" % mpi.mpicc, "-DMPI_CXX_COMPILER=%s" % mpi.mpicxx]
